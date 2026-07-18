@@ -21,6 +21,7 @@
     "@tensorflow/tfjs": "^4.11.0",
     "browser-image-compression": "^2.0.2",
     "compression": "^1.8.1",
+    "encoding": "^0.1.13",
     "express": "^5.2.1",
     "isbot": "^5",
     "jspdf": "^4.2.1",
