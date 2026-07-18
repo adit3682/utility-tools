@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/pdf-C04jRKX-.js","assets/jsx-runtime-_9epNd8-.js","assets/rolldown-runtime-aKtaBQYM.js"])))=>i.map(i=>d[i]);
+import{n as e}from"./jsx-runtime-_9epNd8-.js";var t=null;async function n(){if(t)return t;let n=await e(()=>import(`./pdf-C04jRKX-.js`),__vite__mapDeps([0,1,2])),r=await e(()=>import(`./pdf.worker.min-BjVQVX8e.js`),[]);return n.GlobalWorkerOptions.workerSrc=r.default,t=n,n}export{n as t};

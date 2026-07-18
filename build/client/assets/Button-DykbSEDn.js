@@ -1,0 +1,11 @@
+import{i as e}from"./rolldown-runtime-aKtaBQYM.js";import{q as t,t as n}from"./jsx-runtime-_9epNd8-.js";import{t as r}from"./createLucideIcon-BgznWC3g.js";var i=r(`upload`,[[`path`,{d:`M12 3v12`,key:`1x0j5s`}],[`path`,{d:`m17 8-5-5-5 5`,key:`7q97r8`}],[`path`,{d:`M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4`,key:`ih7n3h`}]]),a=e(t(),1),o=n();function s({onFilesSelected:e,accept:t=`image/*`,multiple:n=!1,label:r=`Pilih File`,hint:s,fileName:c}){let[l,u]=(0,a.useState)(!1),d=(0,a.useRef)(null),f=t=>{let n=Array.from(t);n.length>0&&e(n)};return(0,o.jsxs)(`div`,{onDragOver:e=>{e.preventDefault(),u(!0)},onDragLeave:()=>u(!1),onDrop:e=>{e.preventDefault(),u(!1),f(e.dataTransfer.files)},onClick:()=>d.current?.click(),className:`
+        border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition
+        ${l?`border-teal-500 bg-teal-50 dark:bg-teal-500/10`:`border-slate-300 dark:border-slate-700 hover:border-teal-500 hover:bg-slate-50 dark:hover:bg-slate-800/30`}
+      `,children:[(0,o.jsx)(`input`,{ref:d,type:`file`,accept:t,multiple:n,onChange:e=>f(e.target.files),className:`hidden`}),(0,o.jsxs)(`div`,{className:`flex flex-col items-center gap-2 pointer-events-none`,children:[(0,o.jsx)(i,{size:32,className:`text-teal-500`}),(0,o.jsx)(`span`,{className:`font-semibold text-slate-700 dark:text-slate-200`,children:c||r}),s&&(0,o.jsx)(`span`,{className:`text-xs text-slate-400`,children:s})]})]})}var c={primary:`bg-teal-500 hover:bg-teal-400 text-white`,success:`bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white`,outline:`border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800`,danger:`bg-rose-500 hover:bg-rose-400 text-white`};function l({children:e,variant:t=`primary`,icon:n,loading:r=!1,disabled:i=!1,fullWidth:a=!1,onClick:s,type:l=`button`,className:u=``}){return(0,o.jsxs)(`button`,{type:l,onClick:s,disabled:i||r,className:`
+        py-3 px-6 rounded-xl font-bold transition
+        flex items-center justify-center gap-2
+        disabled:opacity-50 disabled:cursor-not-allowed
+        ${c[t]}
+        ${a?`w-full`:``}
+        ${u}
+      `,children:[n&&!r&&(0,o.jsx)(n,{size:18}),e]})}export{s as n,l as t};
