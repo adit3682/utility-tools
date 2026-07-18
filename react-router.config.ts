@@ -1,6 +1,6 @@
 import type { Config } from '@react-router/dev/config';
-import { vercelPreset } from '@vercel/react-router/vite'; 
 
+// Daftar manual path tool — tambahkan baris baru di sini setiap kali nambah tool baru
 const toolPaths = [
   '/tools/compress-image',
   '/tools/image-to-pdf',
@@ -14,7 +14,6 @@ const toolPaths = [
 
 export default {
   ssr: false,
-  presets: [vercelPreset()],
   async prerender() {
     return ['/', ...toolPaths];
   },
