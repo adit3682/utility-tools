@@ -1,7 +1,7 @@
 import { Outlet, Links, Meta, Scripts, ScrollRestoration } from 'react-router';
 import { ThemeProvider } from './context/ThemeContext';
 import RootLayout from './components/layout/RootLayout';
-import './app.css';
+import './App.css';
 
 export function meta() {
   return [
