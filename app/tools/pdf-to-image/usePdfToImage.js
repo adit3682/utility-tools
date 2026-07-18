@@ -21,32 +21,34 @@ export function usePdfToImage() {
   setLoading(true);
   setPages([]);
 
-    try {
-    const pdfjsLib = await getPdfjsLib(); // baris baru
+  try {
+    const pdfjsLib = await getPdfjsLib();
     const arrayBuffer = await file.arrayBuffer();
-    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
 
-      for (let i = 1; i <= pdf.numPages; i++) {
-        const page = await pdf.getPage(i);
-        const viewport = page.getViewport({ scale });
+    const results = []; // baris yang kurang
 
-        const canvas = document.createElement('canvas');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        const context = canvas.getContext('2d');
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale });
 
-        await page.render({ canvasContext: context, viewport }).promise;
-        results.push({ pageNum: i, dataUrl: canvas.toDataURL('image/png') });
-      }
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      const context = canvas.getContext('2d');
 
-      setPages(results);
-    } catch (error) {
-      console.error('Gagal convert PDF:', error);
-      alert('Gagal membaca PDF, pastikan file tidak rusak atau terkunci password.');
-    } finally {
-      setLoading(false);
+      await page.render({ canvasContext: context, viewport }).promise;
+      results.push({ pageNum: i, dataUrl: canvas.toDataURL('image/png') });
     }
-  };
+
+    setPages(results);
+  } catch (error) {
+    console.error('Gagal convert PDF:', error);
+    alert('Gagal membaca PDF, pastikan file tidak rusak atau terkunci password.');
+  } finally {
+    setLoading(false);
+  }
+};
 
   const downloadSingle = (page) => {
     const link = document.createElement('a');
