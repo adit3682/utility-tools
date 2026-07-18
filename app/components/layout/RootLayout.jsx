@@ -11,7 +11,6 @@ export default function RootLayout({ children }) {
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <div className="flex-1 flex flex-col min-w-0">
-        {/* Topbar cuma muncul di mobile */}
         <header className="lg:hidden flex items-center gap-3 p-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-30">
           <button
             onClick={() => setIsSidebarOpen(true)}
